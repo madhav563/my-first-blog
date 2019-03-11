@@ -4,23 +4,19 @@
     </head>
     <body>
       <div>
+
         <h1><a href="/">Django Girls Blog</a></h1>
       </div>
 
-      <div>
 
-       <p>published: 09:03:2019,11:25</p>
-       <h2><a href="">My first post</a></h2>
-       <p>hi hello everyone welcome to django.</p>
-     </div>
-
+{% for post in posts %}
        <div>
-         <p>published: 09:03:2019,11:25</p>
-         <h2><a href="">My second post</a></h2>
-            <p>let's have fun with django.</p>
 
-
+         <p>published: {{ post.published_date }}</p>
+         <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
 
        </div>
+       {% endfor %}
    </body>
 </html>
